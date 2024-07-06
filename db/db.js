@@ -1,11 +1,11 @@
 const { Client } = require("pg");
 
 const client = new Client({
-  user: "username",
+  user: "",
   password: "password",
   host: "localhost",
   port: "5432",
-  database: "database_name",
+  database: "",
 });
 
 client

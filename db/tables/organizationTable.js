@@ -1,3 +1,4 @@
+const e = require("express");
 const { client } = require("../db");
 
 
@@ -9,6 +10,8 @@ const organizationTable = `
     description TEXT,
   );
 `;
+
+const createOrganizationTable = async () => { 
 client.query(organizationTable, (err, res) => {
   if (err) {
     console.error("Error creating organization table", err);
@@ -17,3 +20,6 @@ client.query(organizationTable, (err, res) => {
   }
   client.end();
 });
+}
+
+exports.createOrganizationTable = createOrganizationTable;

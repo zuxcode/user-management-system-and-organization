@@ -22,11 +22,17 @@ const userTable = `
     phone VARCHAR(255) 
   );
 `;
-client.query(userTable, (err, res) => {
-  if (err) {
-    console.error("Error creating user table", err);
-  } else {
-    console.log("User table created successfully");
-  }
-  client.end();
-});
+
+
+const createUserTable = async () => {
+  client.query(userTable, (err, res) => {
+    if (err) {
+      console.error("Error creating user table", err);
+    } else {
+      console.log("User table created successfully");
+    }
+    client.end();
+  });
+}
+
+exports.createUserTable = createUserTable;
