@@ -3,7 +3,7 @@ const { client } = require("../db");
 
 
 const organizationTable = `
-  CREATE TABLE employees(
+  CREATE TABLE IF NOT EXISTS Organization (
     orgId UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name VARCHAR(255) NOT NULL,
     description TEXT,

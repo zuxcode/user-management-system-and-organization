@@ -13,7 +13,7 @@ client.query(pgcrypto, (err, res) => {
 });
 
 const userTable = `
-  CREATE TABLE employees(
+  CREATE TABLE IF NOT EXISTS User (
     userId UUID PRIMARY KEY DEFAULT gen_random_uuid(),,
     firstName VARCHAR(255) NOT NULL,
     lastName VARCHAR(255) NOT NULL,
